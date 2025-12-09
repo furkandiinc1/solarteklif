@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suntep Solar | Sistem Senaryoları</title>
+  <title>Suntep Solar | Yeterlilik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
@@ -19,15 +19,15 @@
         <a href="index.html">Ana Sayfa</a>
         <a href="urunler.html">Donanımlar</a>
         <a href="yerlesim.html">Yerleşim Planı</a>
-        <a href="sistem-senaryolari.html" class="active">Sistem Senaryoları</a>
+        <a href="sistem-senaryolari.html" class="active">Yeterlilik</a>
       </div>
     </nav>
 
     <section>
       <div class="section-head">
         <div>
-          <div class="section-title">Sistem Senaryoları</div>
-          <div class="muted">Paketlerin pratikte neyi ne kadar beslediğini ve enerji kapsamını özetler.</div>
+          <div class="section-title">Yeterlilik Senaryoları</div>
+          <div class="muted">Paketlerin gerçek kullanım profillerindeki karşılığı.</div>
         </div>
       </div>
       <div class="scenario-grid" id="scenario-grid"></div>
@@ -39,35 +39,35 @@
     const scenarios = [
       {
         key: 'Ekonomi',
-        title: packages.Ekonomi.displayName,
-        energy: '10 kW LiFePO4 + 11 kW inverter',
-        runtime: 'Temel yüklerde 6-8 saat',
+        title: 'Ekonomik Paket – 10 kW LiFePO4 + 11 kW İnverter',
+        energy: 'Günlük evsel tüketimi orta seviyede',
+        runtime: 'Temel yüklerde 6-8 saat | 10 kWh depolama',
         items: [
-          'Aydınlatma, TV, modem, bilgisayar',
-          'Buzdolabı + küçük ev aletleri',
-          'Hidrofor/pompa düşük süreli kullanım'
+          'Günlük yükün gündüz tüketildiği evlerde akşam temel ihtiyaçları karşılama',
+          'Orta seviyede günlük tüketimi olan haneler, gündüz yoğun tüketim gerektirmeyen kullanıcılar',
+          'Akşam 6–8 saat sürekli yük; günlük ~3–5 kWh akşam profili; pik yükleri 11 kW inverter karşılar'
         ]
       },
       {
         key: 'Performans',
-        title: packages.Performans.displayName,
-        energy: '15 kW LiFePO4 + 11 kW inverter',
-        runtime: 'Orta yüklerde 8-10 saat',
+        title: 'Konfor Paketi – 15 kW LiFePO4 + 11 kW İnverter',
+        energy: 'Gündüz-gece dağılımı dengeli',
+        runtime: 'Orta-yüksek yüklerde 8-10 saat | 15 kWh depolama',
         items: [
-          'Aydınlatma, TV, modem, bilgisayar',
-          'Buzdolabı + çamaşır/bulaşık makinesi (döngü sınırlı)',
-          '1 adet klima (kısa süreli) + pompa/hidrofor'
+          'Gündüz orta-yüksek tüketimi olan haneler; akşam daha uzun süreli yük ihtiyacı',
+          'Elektrikli cihaz kullanımı yoğun evler; PV üretimiyle paralel tüketim + akşam tamponu',
+          '8–10 saat akşam yükü; değişken yük profillerinde kararlı performans'
         ]
       },
       {
         key: 'Premium',
-        title: packages.Premium.displayName,
-        energy: '20 kW LiFePO4 + 11 kW inverter',
-        runtime: 'Yüksek yüklerde 10-12 saat',
+        title: 'Premium Paket – 20 kW LiFePO4 + 11 kW İnverter',
+        energy: 'Yüksek tüketimli konut/villa',
+        runtime: 'Yüksek yüklerde 10-12 saat | 20 kWh depolama',
         items: [
-          'Aydınlatma, TV, modem, bilgisayar',
-          'Buzdolabı + çamaşır/bulaşık makinesi',
-          '2 adet klima (daha uzun süre) + pompa/hidrofor'
+          'Yüksek günlük tüketimli, yıl boyu yoğun enerji gereksinimi olan yapılar',
+          'Klima, beyaz eşya ve diğer yoğun yüklerin kullanıldığı haneler',
+          '10–12 saat akşam yükü; yüksek akım çeken cihazlarda tam kapasite inverter; gün içi/gece kesintisiz kullanım'
         ]
       }
     ];
