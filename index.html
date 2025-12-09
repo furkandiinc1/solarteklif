@@ -3,163 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suntep Solar Enerji | Teklif</title>
+  <title>Suntep Solar Enerji | Zeynel Oktay Villa Projesi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --sun: #f5b700;
-      --amber: #ffcf5c;
-      --night: #0b1c2c;
-      --ink: #12263a;
-      --soft: #f6f7fb;
-      --card: #ffffff;
-      --muted: #5a6470;
-      --accent: #2f7b5e;
-      --shadow: 0 20px 45px rgba(0,0,0,0.12);
+      --bg: #0d1b2a;
+      --bg2: #11263b;
+      --panel: #0f2334;
+      --card: #0f1f2d;
+      --ink: #0b1520;
+      --text: #142233;
+      --light: #f7f3ec;
+      --muted: #8ba0b5;
+      --line: #203448;
+      --accent: #f5b400;
+      --accent-soft: #ffd970;
+      --emerald: #1f7f73;
+      --shadow: 0 20px 60px rgba(0,0,0,0.3);
       --radius: 18px;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 10% 20%, rgba(245,183,0,0.12), transparent 32%),
-                  radial-gradient(circle at 80% 0%, rgba(18,38,58,0.28), transparent 40%),
-                  #eef1f5;
-      color: var(--ink);
+      font-family: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(245,180,0,0.18), transparent 32%),
+                  radial-gradient(circle at 80% 0%, rgba(19,72,107,0.25), transparent 40%),
+                  #0b1826;
+      color: #e9edf2;
       line-height: 1.6;
       letter-spacing: 0.01em;
-      padding: 0 18px 48px;
+      padding: 0 18px 56px;
     }
     .page { max-width: 1200px; margin: 0 auto; }
     header {
-      background: linear-gradient(135deg, #0b1c2c, #13314f);
-      color: #fff;
-      padding: 38px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, var(--bg), var(--bg2));
       border-radius: calc(var(--radius) + 6px);
+      padding: 34px;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow);
     }
-    header::after {
+    header::after, header::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 25% 20%, rgba(245,183,0,0.14), transparent 40%),
-                  radial-gradient(circle at 80% 20%, rgba(255,207,92,0.16), transparent 45%);
-      pointer-events: none;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,180,0,0.18), transparent 60%);
+      top: -200px; right: -120px;
+      filter: blur(12px);
     }
-    .header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 1; }
-    .logo-mark { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.02em; }
-    .logo-img { height: 46px; width: auto; display: block; border-radius: 10px; background: #fff; padding: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.14); }
-    .badge { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
-    .hero { margin-top: 22px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; position: relative; z-index: 1; }
-    .hero h1 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.01em; }
-    .hero p { margin: 0; color: rgba(255,255,255,0.82); max-width: 640px; }
+    header::before {
+      width: 320px; height: 320px; left: -120px; bottom: -160px; opacity: 0.5;
+    }
+    .header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 1; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 46px; width: auto; display: block; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25)); }
+    .badge { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #fefefe; }
+    .hero { margin-top: 18px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; position: relative; z-index: 1; }
+    .hero h1 { margin: 0 0 10px; font-family: 'Space Grotesk', 'Manrope', sans-serif; font-size: clamp(30px, 4.6vw, 46px); letter-spacing: -0.01em; color: #fefefe; }
+    .hero p { margin: 0; color: rgba(255,255,255,0.82); max-width: 680px; }
     .cta-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn {
-      padding: 11px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      backdrop-filter: blur(4px);
-      transition: transform 140ms ease, background 140ms ease;
-    }
-    .btn.primary { background: linear-gradient(135deg, var(--sun), var(--amber)); color: #0b1c2c; border: none; box-shadow: 0 12px 30px rgba(245,183,0,0.45); }
+    .btn { padding: 11px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 0.02em; backdrop-filter: blur(4px); transition: transform 140ms ease, background 140ms ease; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-soft)); color: #0b1622; border: none; box-shadow: 0 12px 30px rgba(245,180,0,0.35); }
     .btn:hover { transform: translateY(-2px); }
-    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; margin-top: 16px; }
-    .metric { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 12px 14px; color: #f7f9ff; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 10px; margin-top: 16px; }
+    .metric { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; color: #f7f9ff; }
     .metric strong { display: block; font-size: 18px; }
+    .hero-side { text-align:right; align-self:center; color:rgba(255,255,255,0.85); }
+    .hero-side .top { font-size:13px; text-transform:uppercase; letter-spacing:0.12em; }
+    .hero-side .title { font-size:20px; font-weight:700; }
+    .hero-side .subtitle { font-size:13px; opacity:0.8; }
+    .hero-side .uptime { margin-top:10px; font-size:12px; text-transform:uppercase; letter-spacing:0.12em; }
+    .hero-side .value { font-size:30px; font-weight:800; }
 
-    section { margin-top: 38px; }
-    .section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+    section { margin-top: 42px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #e6ebf2; }
+    .section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; font-family: 'Space Grotesk', 'Manrope', sans-serif; }
     .muted { color: var(--muted); font-size: 14px; }
 
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-      border: 1px solid #e6e8ee;
-    }
-    .pill { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(18,38,58,0.08); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
-    .card h3 { margin: 10px 0 6px; }
-    .price { font-size: 24px; font-weight: 800; color: var(--ink); }
-    .sub { color: var(--muted); font-size: 13px; }
+    .card { background: #0f1f2d; border-radius: var(--radius); padding: 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.2); border: 1px solid #1e3042; position: relative; }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(255,255,255,0.08); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #fefefe; }
+    .card h3 { margin: 10px 0 6px; color: #fefefe; }
+    .price { font-size: 24px; font-weight: 800; color: #fefefe; }
+    .sub { color: #d0d8e3; font-size: 13px; }
     .features { list-style: none; padding: 0; margin: 12px 0 0; }
-    .features li { padding: 7px 0; display: flex; align-items: center; gap: 8px; color: var(--muted); }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sun); }
-    .card.highlight { border: 1px solid rgba(245,183,0,0.35); box-shadow: 0 16px 40px rgba(245,183,0,0.22); position: relative; overflow: hidden; }
-    .card.highlight::after { content: "Oncelikli"; position: absolute; top: 12px; right: 12px; background: #0b1c2c; color: #fff; padding: 6px 10px; border-radius: 10px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .features li { padding: 7px 0; display: flex; align-items: center; gap: 8px; color: #c3cfdd; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .card.highlight { border: 1px solid rgba(245,180,0,0.45); box-shadow: 0 16px 40px rgba(245,180,0,0.28); }
+    .select-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 10px; background: rgba(245,180,0,0.1); color: #fefefe; border: 1px solid rgba(245,180,0,0.3); cursor: pointer; font-weight: 700; }
 
-    .material-panel { margin-top: 16px; background: var(--card); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; box-shadow: 0 10px 26px rgba(0,0,0,0.08); }
-    .material-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .material-panel { margin-top: 16px; background: #0f1f2d; border: 1px solid #1e3042; border-radius: var(--radius); padding: 16px; box-shadow: 0 10px 26px rgba(0,0,0,0.2); color: #e9edf2; }
+    .material-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
     .material-list { list-style: none; padding: 0; margin: 12px 0 0; }
-    .material-list li { padding: 10px 0; border-bottom: 1px solid #edf0f4; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); align-items: baseline; }
+    .material-list li { padding: 10px 0; border-bottom: 1px solid #1f3043; display: flex; justify-content: space-between; gap: 12px; color: #c7d2de; align-items: baseline; }
     .material-cost { text-align: right; }
-    .material-cost div { font-size: 12px; }
+    .material-cost div { font-size: 12px; color: #9eb1c5; }
     .material-list li:last-child { border-bottom: none; }
-    .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; margin-top: 12px; }
-    .total-card { background: #f9fafc; border: 1px solid #e6e8ee; border-radius: 12px; padding: 10px 12px; }
-    .total-card.highlight { border-color: rgba(245,183,0,0.5); background: #fffaf0; }
-    .total-label { color: var(--muted); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
-    .total-value { font-size: 18px; font-weight: 800; color: var(--ink); }
-    .download-card { margin-top: 12px; padding: 14px; border-radius: 12px; background: #f3f6fb; border: 1px solid #e6e8ee; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .download-card .pill { background: rgba(47,123,94,0.12); color: var(--accent); border: 1px solid rgba(47,123,94,0.2); }
-    .download-card a { text-decoration: none; font-weight: 700; color: var(--ink); padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid #d9dee7; box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+    .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-top: 12px; }
+    .total-card { background: #0c1825; border: 1px solid #1f3043; border-radius: 12px; padding: 12px; }
+    .total-card.highlight { border-color: rgba(245,180,0,0.5); background: #1a2838; }
+    .total-label { color: #9eb1c5; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .total-value { font-size: 20px; font-weight: 800; color: #fefefe; }
+    .download-card { margin-top: 12px; padding: 14px; border-radius: 12px; background: #0c1825; border: 1px solid #1f3043; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .download-card .pill { background: rgba(47,127,115,0.18); color: #c8f2e5; border: 1px solid rgba(47,127,115,0.35); }
+    .download-card a { text-decoration: none; font-weight: 700; color: #fefefe; padding: 8px 12px; border-radius: 10px; background: #132233; border: 1px solid #1f3043; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
 
     .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
-    .product { background: linear-gradient(135deg, rgba(18,38,58,0.06), rgba(47,123,94,0.08)); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; }
-    .product h4 { margin: 6px 0 4px; }
+    .product { background: linear-gradient(135deg, rgba(47,127,115,0.18), rgba(15,31,45,0.85)); border: 1px solid #1f3043; border-radius: var(--radius); padding: 16px; color: #e9edf2; box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
+    .product h4 { margin: 6px 0 4px; color: #fefefe; }
+    .product .muted { color: #c7d2de; }
 
     .guarantee { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
-    .guarantee .item { background: var(--card); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 14px; }
-    .item strong { display: block; font-size: 16px; margin-bottom: 6px; }
+    .guarantee .item { background: #0f1f2d; border: 1px solid #1f3043; border-radius: var(--radius); padding: 14px; color: #e9edf2; box-shadow: 0 10px 24px rgba(0,0,0,0.16); }
+    .item strong { display: block; font-size: 16px; margin-bottom: 6px; color: #fefefe; }
 
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; }
-      .header-top { flex-direction: column; align-items: flex-start; }
-    }
+    .light-panel { margin-top: 44px; background: #f7f3ec; color: var(--ink); border-radius: calc(var(--radius) + 6px); padding: 24px; border: 1px solid #e2d9c9; box-shadow: 0 14px 36px rgba(0,0,0,0.08); }
+    .light-panel .section-title { color: var(--ink); }
+    .light-panel .muted { color: #4f5965; }
+    .logo-light { height: 46px; }
+
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .hero-side { text-align:left; } }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
       <div class="header-top">
-        <div class="logo-mark">
-          <img src="suntepsolarlogo.png" alt="Suntep Solar Enerji" class="logo-img">
-          <div>Suntep Solar Enerji<br><span style="font-size:12px; opacity:0.82; letter-spacing:0.04em;">Güneş Paneli Kurulumu</span></div>
+        <div class="logo">
+          <img src="suntepsolarlogobeyaz.png" alt="Suntep Solar Enerji" aria-label="Suntep Solar Enerji">
+          <div>
+            <div style="font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#fefefe;">Suntep Solar Enerji</div>
+            <div style="font-size:12px; opacity:0.8; letter-spacing:0.04em; color:#d7e2f0;">Güneş Enerjisi Kurulumu</div>
+          </div>
         </div>
         <div class="badge">Teklif Sunumu</div>
       </div>
       <div class="hero">
         <div>
-          <h1>Güneş Enerjisi Çatı Çözümleri</h1>
-          <p>Suntep Solar Enerji, tasarımdan devreye almaya kadar anahtar teslim çatı üstü GES kurulumları sunar. 3 hazır paket ile maliyet, performans ve garanti kombinasyonlarını seçebilirsiniz.</p>
+          <h1>Zeynel Oktay Villa Projesi</h1>
+          <p>Toplam 6 villa için çatı GES tasarımı, kurulum ve devreye alma. Farklı garanti, verimlilik ve inverter seçenekleriyle 3 paket. Paket seçimine göre malzeme listesi ve 6 villa toplam tutarı otomatik hesaplanır.</p>
           <div class="cta-row">
             <a class="btn primary" href="#paketler">Paketleri İncele</a>
             <a class="btn" href="#urunler">Ürün tanıtımları</a>
           </div>
           <div class="metrics">
-            <div class="metric"><strong>7/24</strong> Uzaktan izleme paneli</div>
+            <div class="metric"><strong>6 villa</strong> Çatı üstü GES</div>
             <div class="metric"><strong>12 yıl</strong> İşçilik garantisi</div>
-            <div class="metric"><strong>%20+</strong> Verimlilik paneller</div>
-            <div class="metric"><strong>48 saat</strong> Onarım taahhüdü</div>
+            <div class="metric"><strong>%20+</strong> Panel verimliliği</div>
+            <div class="metric"><strong>48 saat</strong> Müdahale taahhüdü</div>
           </div>
         </div>
-        <div style="text-align:right; align-self:center; color:rgba(255,255,255,0.85);">
-          <div style="font-size:14px; text-transform:uppercase; letter-spacing:0.14em;">Proje</div>
-          <div style="font-size:20px; font-weight:700;">Zeynel Oktay Villa Projesi</div>
-          <div style="font-size:13px; opacity:0.8;">Toplam 6 villa için çatı GES</div>
-          <div style="margin-top:10px; font-size:12px; text-transform:uppercase; letter-spacing:0.12em;">Saha verisi</div>
-          <div style="font-size:30px; font-weight:800;">98.7% uptime</div>
-          <div style="font-size:13px; opacity:0.8;">Gerçek saha performansı</div>
+        <div class="hero-side">
+          <div class="top">Proje</div>
+          <div class="title">Zeynel Oktay Villa Projesi</div>
+          <div class="subtitle">6 adet villa için çatı GES</div>
+          <div class="uptime">Saha verisi</div>
+          <div class="value">98.7% uptime</div>
+          <div class="subtitle">Gerçek saha performansı</div>
         </div>
       </div>
     </header>
@@ -168,42 +172,45 @@
       <div class="section-head">
         <div>
           <div class="section-title">3 Paket Seçeneği</div>
-          <div class="muted">İhtiyacınıza göre fiyat/performans/garanti kombinasyonları.</div>
+          <div class="muted">İhtiyacınıza göre fiyat/performans/garanti kombinasyonları. Seçilen paket için 6 villa toplamı otomatik hesaplanır.</div>
         </div>
       </div>
       <div class="cards">
-        <div class="card" data-package="Ekonomi" onclick="selectPackage('Ekonomi')">
+        <div class="card" data-package="Ekonomi">
           <span class="pill">Ekonomi</span>
           <h3>Giriş seviye</h3>
-          <div class="price" id="price-ekonomi">45.000 TL</div>
+          <div class="price" id="price-ekonomi"></div>
           <div class="sub">5 kWp | 10 yıl panel garanti</div>
           <ul class="features">
             <li><span class="dot"></span>Monokristal panel seti</li>
             <li><span class="dot"></span>String inverter</li>
             <li><span class="dot"></span>Galvaniz çatı montajı</li>
           </ul>
+          <div class="select-btn" onclick="selectPackage('Ekonomi')">Bu paketi seç</div>
         </div>
-        <div class="card highlight" data-package="Performans" onclick="selectPackage('Performans')">
+        <div class="card highlight" data-package="Performans">
           <span class="pill">Performans</span>
           <h3>En çok tercih edilen</h3>
-          <div class="price" id="price-performans">58.000 TL</div>
+          <div class="price" id="price-performans"></div>
           <div class="sub">6 kWp | 15 yıl panel garanti</div>
           <ul class="features">
             <li><span class="dot"></span>High-eff monokristal panel</li>
             <li><span class="dot"></span>Hibrit inverter hazırlığı</li>
             <li><span class="dot"></span>Alüminyum montaj</li>
           </ul>
+          <div class="select-btn" onclick="selectPackage('Performans')">Bu paketi seç</div>
         </div>
-        <div class="card" data-package="Premium" onclick="selectPackage('Premium')">
+        <div class="card" data-package="Premium">
           <span class="pill">Premium</span>
           <h3>Maksimum verim</h3>
-          <div class="price" id="price-premium">74.000 TL</div>
+          <div class="price" id="price-premium"></div>
           <div class="sub">8 kWp | 25 yıl panel garanti</div>
           <ul class="features">
             <li><span class="dot"></span>Tier-1 panel seti</li>
             <li><span class="dot"></span>Akıllı inverter + izleme</li>
             <li><span class="dot"></span>Paslanmaz montaj</li>
           </ul>
+          <div class="select-btn" onclick="selectPackage('Premium')">Bu paketi seç</div>
         </div>
       </div>
 
@@ -211,7 +218,7 @@
         <div class="material-header">
           <div>
             <div class="section-title" style="margin:0;">Seçilen paket: <span id="active-package">Performans</span></div>
-            <div class="muted">Bu liste tek villa içindir. Toplam 6 villa için tutarlar otomatik hesaplanır. Gerçek değerler saha keşfine göre güncellenecek.</div>
+            <div class="muted">Bu liste tek villa içindir. 6 villa için toplamlar otomatik hesaplanır. Saha keşfine göre güncellenecek.</div>
           </div>
           <div class="pill" id="est-power">6 kWp</div>
         </div>
@@ -251,8 +258,8 @@
           <div class="muted">%21 üzeri verim, PID/LID korunumu, 5400 Pa kar yüküne dayanıklı.</div>
         </div>
         <div class="product">
-          <span class="pill">Inverter</span>
-          <h4>Akıllı Inverter</h4>
+          <span class="pill">İnverter</span>
+          <h4>Akıllı İnverter</h4>
           <div class="muted">Wi-Fi izleme, MPPT verim optimizasyonu, hibrit hazırlık.</div>
         </div>
         <div class="product">
@@ -277,6 +284,17 @@
         <div class="item"><strong>Servis SLA</strong>Arıza bildirimi sonrası 48 saat içinde müdahale.</div>
       </div>
     </section>
+
+    <div class="light-panel">
+      <div class="section-head">
+        <div>
+          <div class="section-title" style="margin:0;">Sunum Özeti</div>
+          <div class="muted">GitHub/Verifly üzerinden paylaşım için optimize tek sayfa HTML. 6 villa toplamları dinamik hesaplanır.</div>
+        </div>
+        <img src="suntepsolarlogo.png" alt="Suntep Solar" class="logo-light">
+      </div>
+      <div class="muted" style="margin-top:10px; color:#2f3742;">Paket fiyat ve malzeme listeleri sahadan gelecek nihai değerlerle güncellenebilir. Tek dosya halinde host edilebilir; DWG planı indirme bağlantısı eklendi.</div>
+    </div>
   </div>
 
   <script>
@@ -331,7 +349,7 @@
         const perVilla = document.createElement('div');
         perVilla.textContent = "Villa: " + formatPrice(item.price);
         const totalProj = document.createElement('div');
-        totalProj.textContent = "6 villa: " + formatPrice(item.price * VILLA_COUNT);
+        totalProj.textContent = VILLA_COUNT + " villa: " + formatPrice(item.price * VILLA_COUNT);
         cost.appendChild(perVilla);
         cost.appendChild(totalProj);
         li.appendChild(name);
@@ -343,12 +361,8 @@
       document.getElementById('price-per-villa').textContent = formatPrice(packages[pkg].price);
       document.getElementById('price-total').textContent = formatPrice(packages[pkg].price * VILLA_COUNT);
       document.getElementById('price-' + pkg.toLowerCase()).textContent = formatPrice(packages[pkg].price);
-    }
-
-    function selectPackage(pkg) {
-      renderMaterials(pkg);
       document.querySelectorAll('[data-package]').forEach(card => {
-        card.style.outline = card.dataset.package === pkg ? '2px solid var(--sun)' : 'none';
+        card.style.outline = card.dataset.package === pkg ? '2px solid var(--accent)' : 'none';
       });
     }
 
@@ -359,10 +373,8 @@
       });
     }
 
-    // initialize default package
     initPrices();
     renderMaterials('Performans');
-    selectPackage('Performans');
   </script>
 </body>
 </html>
