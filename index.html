@@ -153,7 +153,8 @@
         `;
         wrap.appendChild(tr);
       });
-      document.getElementById('active-package').textContent = pkg;
+      const pkgName = (packages[pkg] && packages[pkg].displayName) ? packages[pkg].displayName : pkg;
+      document.getElementById('active-package').textContent = pkgName;
       document.getElementById('est-power').textContent = packages[pkg].power;
       document.getElementById('price-per-villa').textContent = formatPrice(packages[pkg].price);
       document.getElementById('price-total').textContent = formatPrice(packages[pkg].price * VILLA_COUNT);

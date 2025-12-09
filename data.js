@@ -1,6 +1,7 @@
 ﻿const VILLA_COUNT = 6;
 const packages = {
   Ekonomi: {
+    displayName: "Ekonomik & yeterli",
     power: "11 kWp",
     price: 45000,
     materials: [
@@ -12,6 +13,7 @@ const packages = {
     ]
   },
   Performans: {
+    displayName: "Gece rahat kullanım",
     power: "11 kWp",
     price: 58000,
     materials: [
@@ -23,6 +25,7 @@ const packages = {
     ]
   },
   Premium: {
+    displayName: "Yoğun/uzun kullanım",
     power: "11 kWp",
     price: 74000,
     materials: [
