@@ -3,152 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suntep Solar Enerji | Zeynel Oktay Villa Projesi</title>
+  <title>Suntep Solar | Zeynel Oktay Villa Projesi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0d1b2a;
-      --bg2: #11263b;
-      --panel: #0f2334;
-      --card: #0f1f2d;
-      --ink: #0b1520;
-      --text: #142233;
-      --light: #f7f3ec;
-      --muted: #8ba0b5;
-      --line: #203448;
-      --accent: #f5b400;
-      --accent-soft: #ffd970;
-      --emerald: #1f7f73;
-      --shadow: 0 20px 60px rgba(0,0,0,0.3);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 10% 20%, rgba(245,180,0,0.18), transparent 32%),
-                  radial-gradient(circle at 80% 0%, rgba(19,72,107,0.25), transparent 40%),
-                  #0b1826;
-      color: #e9edf2;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-      padding: 0 18px 56px;
-    }
-    .page { max-width: 1200px; margin: 0 auto; }
-    header {
-      margin-top: 20px;
-      background: linear-gradient(135deg, var(--bg), var(--bg2));
-      border-radius: calc(var(--radius) + 6px);
-      padding: 34px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    header::after, header::before {
-      content: "";
-      position: absolute;
-      width: 520px; height: 520px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,180,0,0.18), transparent 60%);
-      top: -200px; right: -120px;
-      filter: blur(12px);
-    }
-    header::before {
-      width: 320px; height: 320px; left: -120px; bottom: -160px; opacity: 0.5;
-    }
-    .header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 1; flex-wrap: wrap; }
-    .logo { display: flex; align-items: center; gap: 12px; }
-    .logo img { height: 46px; width: auto; display: block; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25)); }
-    .badge { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #fefefe; }
-    .hero { margin-top: 18px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; position: relative; z-index: 1; }
-    .hero h1 { margin: 0 0 10px; font-family: 'Space Grotesk', 'Manrope', sans-serif; font-size: clamp(30px, 4.6vw, 46px); letter-spacing: -0.01em; color: #fefefe; }
-    .hero p { margin: 0; color: rgba(255,255,255,0.82); max-width: 680px; }
-    .cta-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { padding: 11px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 0.02em; backdrop-filter: blur(4px); transition: transform 140ms ease, background 140ms ease; }
-    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-soft)); color: #0b1622; border: none; box-shadow: 0 12px 30px rgba(245,180,0,0.35); }
-    .btn:hover { transform: translateY(-2px); }
-    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 10px; margin-top: 16px; }
-    .metric { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; color: #f7f9ff; }
-    .metric strong { display: block; font-size: 18px; }
-    .hero-side { text-align:right; align-self:center; color:rgba(255,255,255,0.85); }
-    .hero-side .top { font-size:13px; text-transform:uppercase; letter-spacing:0.12em; }
-    .hero-side .title { font-size:20px; font-weight:700; }
-    .hero-side .subtitle { font-size:13px; opacity:0.8; }
-    .hero-side .uptime { margin-top:10px; font-size:12px; text-transform:uppercase; letter-spacing:0.12em; }
-    .hero-side .value { font-size:30px; font-weight:800; }
-
-    section { margin-top: 42px; }
-    .section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #e6ebf2; }
-    .section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; font-family: 'Space Grotesk', 'Manrope', sans-serif; }
-    .muted { color: var(--muted); font-size: 14px; }
-
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; }
-    .card { background: #0f1f2d; border-radius: var(--radius); padding: 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.2); border: 1px solid #1e3042; position: relative; }
-    .pill { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(255,255,255,0.08); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #fefefe; }
-    .card h3 { margin: 10px 0 6px; color: #fefefe; }
-    .price { font-size: 24px; font-weight: 800; color: #fefefe; }
-    .sub { color: #d0d8e3; font-size: 13px; }
-    .features { list-style: none; padding: 0; margin: 12px 0 0; }
-    .features li { padding: 7px 0; display: flex; align-items: center; gap: 8px; color: #c3cfdd; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .card.highlight { border: 1px solid rgba(245,180,0,0.45); box-shadow: 0 16px 40px rgba(245,180,0,0.28); }
-    .select-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 10px; background: rgba(245,180,0,0.1); color: #fefefe; border: 1px solid rgba(245,180,0,0.3); cursor: pointer; font-weight: 700; }
-
-    .material-panel { margin-top: 16px; background: #0f1f2d; border: 1px solid #1e3042; border-radius: var(--radius); padding: 16px; box-shadow: 0 10px 26px rgba(0,0,0,0.2); color: #e9edf2; }
-    .material-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-    .material-list { list-style: none; padding: 0; margin: 12px 0 0; }
-    .material-list li { padding: 10px 0; border-bottom: 1px solid #1f3043; display: flex; justify-content: space-between; gap: 12px; color: #c7d2de; align-items: baseline; }
-    .material-cost { text-align: right; }
-    .material-cost div { font-size: 12px; color: #9eb1c5; }
-    .material-list li:last-child { border-bottom: none; }
-    .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-top: 12px; }
-    .total-card { background: #0c1825; border: 1px solid #1f3043; border-radius: 12px; padding: 12px; }
-    .total-card.highlight { border-color: rgba(245,180,0,0.5); background: #1a2838; }
-    .total-label { color: #9eb1c5; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
-    .total-value { font-size: 20px; font-weight: 800; color: #fefefe; }
-    .download-card { margin-top: 12px; padding: 14px; border-radius: 12px; background: #0c1825; border: 1px solid #1f3043; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .download-card .pill { background: rgba(47,127,115,0.18); color: #c8f2e5; border: 1px solid rgba(47,127,115,0.35); }
-    .download-card a { text-decoration: none; font-weight: 700; color: #fefefe; padding: 8px 12px; border-radius: 10px; background: #132233; border: 1px solid #1f3043; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
-
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
-    .product { background: linear-gradient(135deg, rgba(47,127,115,0.18), rgba(15,31,45,0.85)); border: 1px solid #1f3043; border-radius: var(--radius); padding: 16px; color: #e9edf2; box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
-    .product h4 { margin: 6px 0 4px; color: #fefefe; }
-    .product .muted { color: #c7d2de; }
-
-    .guarantee { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
-    .guarantee .item { background: #0f1f2d; border: 1px solid #1f3043; border-radius: var(--radius); padding: 14px; color: #e9edf2; box-shadow: 0 10px 24px rgba(0,0,0,0.16); }
-    .item strong { display: block; font-size: 16px; margin-bottom: 6px; color: #fefefe; }
-
-    .light-panel { margin-top: 44px; background: #f7f3ec; color: var(--ink); border-radius: calc(var(--radius) + 6px); padding: 24px; border: 1px solid #e2d9c9; box-shadow: 0 14px 36px rgba(0,0,0,0.08); }
-    .light-panel .section-title { color: var(--ink); }
-    .light-panel .muted { color: #4f5965; }
-    .logo-light { height: 46px; }
-
-    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .hero-side { text-align:left; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="header-top">
-        <div class="logo">
-          <img src="suntepsolarlogobeyaz.png" alt="Suntep Solar Enerji" aria-label="Suntep Solar Enerji">
-          <div>
-            <div style="font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#fefefe;">Suntep Solar Enerji</div>
-            <div style="font-size:12px; opacity:0.8; letter-spacing:0.04em; color:#d7e2f0;">Güneş Enerjisi Kurulumu</div>
-          </div>
-        </div>
-        <div class="badge">Teklif Sunumu</div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="suntepsolarlogo.png" alt="Suntep Solar" class="logo">
       </div>
-      <div class="hero">
+      <div class="nav-links">
+        <a href="index.html" class="active">Ana Sayfa</a>
+        <a href="urunler.html">Ürün Tanıtımları</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-grid">
         <div>
           <h1>Zeynel Oktay Villa Projesi</h1>
           <p>Toplam 6 villa için çatı GES tasarımı, kurulum ve devreye alma. Farklı garanti, verimlilik ve inverter seçenekleriyle 3 paket. Paket seçimine göre malzeme listesi ve 6 villa toplam tutarı otomatik hesaplanır.</p>
           <div class="cta-row">
             <a class="btn primary" href="#paketler">Paketleri İncele</a>
-            <a class="btn" href="#urunler">Ürün tanıtımları</a>
+            <a class="btn" href="urunler.html">Ürün tanıtımları</a>
           </div>
           <div class="metrics">
             <div class="metric"><strong>6 villa</strong> Çatı üstü GES</div>
@@ -166,13 +46,13 @@
           <div class="subtitle">Gerçek saha performansı</div>
         </div>
       </div>
-    </header>
+    </div>
 
     <section id="paketler">
       <div class="section-head">
         <div>
           <div class="section-title">3 Paket Seçeneği</div>
-          <div class="muted">İhtiyacınıza göre fiyat/performans/garanti kombinasyonları. Seçilen paket için 6 villa toplamı otomatik hesaplanır.</div>
+          <div class="muted">Seçtiğiniz pakete göre villa başına ve 6 villa toplam tutarları otomatik hesaplanır.</div>
         </div>
       </div>
       <div class="cards">
@@ -218,7 +98,7 @@
         <div class="material-header">
           <div>
             <div class="section-title" style="margin:0;">Seçilen paket: <span id="active-package">Performans</span></div>
-            <div class="muted">Bu liste tek villa içindir. 6 villa için toplamlar otomatik hesaplanır. Saha keşfine göre güncellenecek.</div>
+            <div class="muted">Bu liste tek villa içindir. 6 villa için toplamlar otomatik hesaplanır.</div>
           </div>
           <div class="pill" id="est-power">6 kWp</div>
         </div>
@@ -244,32 +124,6 @@
       </div>
     </section>
 
-    <section id="urunler">
-      <div class="section-head">
-        <div>
-          <div class="section-title">Kullandığımız Ürünler</div>
-          <div class="muted">Panel, inverter ve montaj ekipmanlarında global markalar.</div>
-        </div>
-      </div>
-      <div class="products">
-        <div class="product">
-          <span class="pill">Panel</span>
-          <h4>Tier-1 Monokristal</h4>
-          <div class="muted">%21 üzeri verim, PID/LID korunumu, 5400 Pa kar yüküne dayanıklı.</div>
-        </div>
-        <div class="product">
-          <span class="pill">İnverter</span>
-          <h4>Akıllı İnverter</h4>
-          <div class="muted">Wi-Fi izleme, MPPT verim optimizasyonu, hibrit hazırlık.</div>
-        </div>
-        <div class="product">
-          <span class="pill">Montaj</span>
-          <h4>Alüminyum/Paslanmaz</h4>
-          <div class="muted">Korozyon dirençli kilit sistem, çatı yapıya göre hesaplanmış.</div>
-        </div>
-      </div>
-    </section>
-
     <section>
       <div class="section-head">
         <div>
@@ -285,58 +139,13 @@
       </div>
     </section>
 
-    <div class="light-panel">
-      <div class="section-head">
-        <div>
-          <div class="section-title" style="margin:0;">Sunum Özeti</div>
-          <div class="muted">GitHub/Verifly üzerinden paylaşım için optimize tek sayfa HTML. 6 villa toplamları dinamik hesaplanır.</div>
-        </div>
-        <img src="suntepsolarlogo.png" alt="Suntep Solar" class="logo-light">
-      </div>
-      <div class="muted" style="margin-top:10px; color:#2f3742;">Paket fiyat ve malzeme listeleri sahadan gelecek nihai değerlerle güncellenebilir. Tek dosya halinde host edilebilir; DWG planı indirme bağlantısı eklendi.</div>
+    <div class="footer-note">
+      Tek sayfa HTML olarak Verifly/GitHub üzerinden paylaşılabilir. Paket fiyat ve malzeme listeleri sahadan gelecek nihai değerlerle güncellenebilir. DWG planı indirme bağlantısı eklendi.
     </div>
   </div>
 
+  <script src="data.js"></script>
   <script>
-    const VILLA_COUNT = 6;
-    const packages = {
-      Ekonomi: {
-        power: "5 kWp",
-        price: 45000,
-        materials: [
-          { name: "Monokristal panel seti (5 kWp)", price: 24000 },
-          { name: "String inverter", price: 10000 },
-          { name: "Galvaniz montaj ekipmanı", price: 6000 },
-          { name: "Kablo, sigorta, AC/DC pano", price: 3000 },
-          { name: "Kurulum ve test", price: 2000 }
-        ]
-      },
-      Performans: {
-        power: "6 kWp",
-        price: 58000,
-        materials: [
-          { name: "High-eff monokristal panel seti (6 kWp)", price: 30000 },
-          { name: "Hibrit hazır akıllı inverter", price: 14000 },
-          { name: "Alüminyum montaj ekipmanı", price: 8000 },
-          { name: "Kablo, sigorta, AC/DC pano", price: 4000 },
-          { name: "Kurulum, test, devreye alma", price: 2000 }
-        ]
-      },
-      Premium: {
-        power: "8 kWp",
-        price: 74000,
-        materials: [
-          { name: "Tier-1 monokristal panel seti (8 kWp)", price: 40000 },
-          { name: "Akıllı inverter + izleme", price: 16000 },
-          { name: "Paslanmaz montaj ekipmanı", price: 10000 },
-          { name: "Kablo, sigorta, AC/DC pano", price: 5000 },
-          { name: "Kurulum, test, devreye alma", price: 3000 }
-        ]
-      }
-    };
-
-    const formatPrice = (value) => value.toLocaleString('tr-TR') + " TL";
-
     function renderMaterials(pkg) {
       const wrap = document.getElementById('material-list');
       wrap.innerHTML = '';
