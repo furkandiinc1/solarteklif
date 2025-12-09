@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suntep Solar Enerji | Teklif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sun: #f5b700;
+      --amber: #ffcf5c;
+      --night: #0b1c2c;
+      --ink: #12263a;
+      --soft: #f6f7fb;
+      --card: #ffffff;
+      --muted: #5a6470;
+      --accent: #2f7b5e;
+      --shadow: 0 20px 45px rgba(0,0,0,0.12);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(245,183,0,0.12), transparent 32%),
+                  radial-gradient(circle at 80% 0%, rgba(18,38,58,0.28), transparent 40%),
+                  #eef1f5;
+      color: var(--ink);
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      padding: 0 18px 48px;
+    }
+    .page { max-width: 1200px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #0b1c2c, #13314f);
+      color: #fff;
+      padding: 38px;
+      border-radius: calc(var(--radius) + 6px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 25% 20%, rgba(245,183,0,0.14), transparent 40%),
+                  radial-gradient(circle at 80% 20%, rgba(255,207,92,0.16), transparent 45%);
+      pointer-events: none;
+    }
+    .header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 1; }
+    .logo-mark { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.02em; }
+    .logo-img { height: 46px; width: auto; display: block; border-radius: 10px; background: #fff; padding: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.14); }
+    .badge { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero { margin-top: 22px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; position: relative; z-index: 1; }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.01em; }
+    .hero p { margin: 0; color: rgba(255,255,255,0.82); max-width: 640px; }
+    .cta-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+      transition: transform 140ms ease, background 140ms ease;
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--sun), var(--amber)); color: #0b1c2c; border: none; box-shadow: 0 12px 30px rgba(245,183,0,0.45); }
+    .btn:hover { transform: translateY(-2px); }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; margin-top: 16px; }
+    .metric { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 12px 14px; color: #f7f9ff; }
+    .metric strong { display: block; font-size: 18px; }
+
+    section { margin-top: 38px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border: 1px solid #e6e8ee;
+    }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(18,38,58,0.08); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .card h3 { margin: 10px 0 6px; }
+    .price { font-size: 24px; font-weight: 800; color: var(--ink); }
+    .sub { color: var(--muted); font-size: 13px; }
+    .features { list-style: none; padding: 0; margin: 12px 0 0; }
+    .features li { padding: 7px 0; display: flex; align-items: center; gap: 8px; color: var(--muted); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sun); }
+    .card.highlight { border: 1px solid rgba(245,183,0,0.35); box-shadow: 0 16px 40px rgba(245,183,0,0.22); position: relative; overflow: hidden; }
+    .card.highlight::after { content: "Oncelikli"; position: absolute; top: 12px; right: 12px; background: #0b1c2c; color: #fff; padding: 6px 10px; border-radius: 10px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .material-panel { margin-top: 16px; background: var(--card); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; box-shadow: 0 10px 26px rgba(0,0,0,0.08); }
+    .material-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .material-list { list-style: none; padding: 0; margin: 12px 0 0; }
+    .material-list li { padding: 10px 0; border-bottom: 1px solid #edf0f4; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); }
+    .material-list li:last-child { border-bottom: none; }
+
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
+    .product { background: linear-gradient(135deg, rgba(18,38,58,0.06), rgba(47,123,94,0.08)); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; }
+    .product h4 { margin: 6px 0 4px; }
+
+    .guarantee { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
+    .guarantee .item { background: var(--card); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 14px; }
+    .item strong { display: block; font-size: 16px; margin-bottom: 6px; }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="header-top">
+        <div class="logo-mark">
+          <img src="suntepsolarlogo.png" alt="Suntep Solar Enerji" class="logo-img">
+          <div>Suntep Solar Enerji<br><span style="font-size:12px; opacity:0.82; letter-spacing:0.04em;">Güneş Paneli Kurulumu</span></div>
+        </div>
+        <div class="badge">Teklif Sunumu</div>
+      </div>
+      <div class="hero">
+        <div>
+          <h1>Güneş Enerjisi Çatı Çözümleri</h1>
+          <p>Suntep Solar Enerji, tasarımdan devreye almaya kadar anahtar teslim çatı üstü GES kurulumları sunar. 3 hazır paket ile maliyet, performans ve garanti kombinasyonlarını seçebilirsiniz.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#paketler">Paketleri İncele</a>
+            <a class="btn" href="#urunler">Ürün tanıtımları</a>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>7/24</strong> Uzaktan izleme paneli</div>
+            <div class="metric"><strong>12 yıl</strong> İşçilik garantisi</div>
+            <div class="metric"><strong>%20+</strong> Verimlilik paneller</div>
+            <div class="metric"><strong>48 saat</strong> Onarım taahhüdü</div>
+          </div>
+        </div>
+        <div style="text-align:right; align-self:center; color:rgba(255,255,255,0.85);">
+          <div style="font-size:14px; text-transform:uppercase; letter-spacing:0.14em;">Saha verisi</div>
+          <div style="font-size:34px; font-weight:800;">98.7% uptime</div>
+          <div style="font-size:13px; opacity:0.8;">Gerçek saha performansı</div>
+        </div>
+      </div>
+    </header>
+
+    <section id="paketler">
+      <div class="section-head">
+        <div>
+          <div class="section-title">3 Paket Seçeneği</div>
+          <div class="muted">İhtiyacınıza göre fiyat/performans/garanti kombinasyonları.</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" data-package="Ekonomi" onclick="selectPackage('Ekonomi')">
+          <span class="pill">Ekonomi</span>
+          <h3>Giriş seviye</h3>
+          <div class="price" id="price-ekonomi">45.000 TL</div>
+          <div class="sub">5 kWp | 10 yıl panel garanti</div>
+          <ul class="features">
+            <li><span class="dot"></span>Monokristal panel seti</li>
+            <li><span class="dot"></span>String inverter</li>
+            <li><span class="dot"></span>Galvaniz çatı montajı</li>
+          </ul>
+        </div>
+        <div class="card highlight" data-package="Performans" onclick="selectPackage('Performans')">
+          <span class="pill">Performans</span>
+          <h3>En çok tercih edilen</h3>
+          <div class="price" id="price-performans">58.000 TL</div>
+          <div class="sub">6 kWp | 15 yıl panel garanti</div>
+          <ul class="features">
+            <li><span class="dot"></span>High-eff monokristal panel</li>
+            <li><span class="dot"></span>Hibrit inverter hazırlığı</li>
+            <li><span class="dot"></span>Alüminyum montaj</li>
+          </ul>
+        </div>
+        <div class="card" data-package="Premium" onclick="selectPackage('Premium')">
+          <span class="pill">Premium</span>
+          <h3>Maksimum verim</h3>
+          <div class="price" id="price-premium">74.000 TL</div>
+          <div class="sub">8 kWp | 25 yıl panel garanti</div>
+          <ul class="features">
+            <li><span class="dot"></span>Tier-1 panel seti</li>
+            <li><span class="dot"></span>Akıllı inverter + izleme</li>
+            <li><span class="dot"></span>Paslanmaz montaj</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="material-panel" id="material-panel">
+        <div class="material-header">
+          <div>
+            <div class="section-title" style="margin:0;">Seçilen paket: <span id="active-package">Performans</span></div>
+            <div class="muted">Genel malzeme listesi ve tahmini fiyatlar. Gerçek değerler saha keşfine göre güncellenecek.</div>
+          </div>
+          <div class="pill" id="est-power">6 kWp</div>
+        </div>
+        <ul class="material-list" id="material-list"></ul>
+        <div class="muted" style="margin-top:8px;">Not: Fiyatlar KDV hariç/ilave olabilir, saha keşfine göre değişir.</div>
+      </div>
+    </section>
+
+    <section id="urunler">
+      <div class="section-head">
+        <div>
+          <div class="section-title">Kullandığımız Ürünler</div>
+          <div class="muted">Panel, inverter ve montaj ekipmanlarında global markalar.</div>
+        </div>
+      </div>
+      <div class="products">
+        <div class="product">
+          <span class="pill">Panel</span>
+          <h4>Tier-1 Monokristal</h4>
+          <div class="muted">%21 üzeri verim, PID/LID korunumu, 5400 Pa kar yüküne dayanıklı.</div>
+        </div>
+        <div class="product">
+          <span class="pill">Inverter</span>
+          <h4>Akıllı Inverter</h4>
+          <div class="muted">Wi-Fi izleme, MPPT verim optimizasyonu, hibrit hazırlık.</div>
+        </div>
+        <div class="product">
+          <span class="pill">Montaj</span>
+          <h4>Alüminyum/Paslanmaz</h4>
+          <div class="muted">Korozyon dirençli kilit sistem, çatı yapıya göre hesaplanmış.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="section-title">Garanti ve Servis</div>
+          <div class="muted">Performans, işçilik ve tepki süresi taahhütleri.</div>
+        </div>
+      </div>
+      <div class="guarantee">
+        <div class="item"><strong>Panel garanti</strong>10-25 yıl performans, üretici destekli.</div>
+        <div class="item"><strong>İnverter garanti</strong>5-10 yıl, yazılım güncelleme dahil.</div>
+        <div class="item"><strong>İşçilik garanti</strong>12 yıl sızıntı ve bağlantı kontrolü.</div>
+        <div class="item"><strong>Servis SLA</strong>Arıza bildirimi sonrası 48 saat içinde müdahale.</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const packages = {
+      Ekonomi: {
+        power: "5 kWp",
+        price: "45.000 TL",
+        materials: [
+          { name: "Monokristal panel seti (5 kWp)", price: "24.000 TL" },
+          { name: "String inverter", price: "10.000 TL" },
+          { name: "Galvaniz montaj ekipmanı", price: "6.000 TL" },
+          { name: "Kablo, sigorta, AC/DC pano", price: "3.000 TL" },
+          { name: "Kurulum ve test", price: "2.000 TL" }
+        ]
+      },
+      Performans: {
+        power: "6 kWp",
+        price: "58.000 TL",
+        materials: [
+          { name: "High-eff monokristal panel seti (6 kWp)", price: "30.000 TL" },
+          { name: "Hibrit hazır akıllı inverter", price: "14.000 TL" },
+          { name: "Alüminyum montaj ekipmanı", price: "8.000 TL" },
+          { name: "Kablo, sigorta, AC/DC pano", price: "4.000 TL" },
+          { name: "Kurulum, test, devreye alma", price: "2.000 TL" }
+        ]
+      },
+      Premium: {
+        power: "8 kWp",
+        price: "74.000 TL",
+        materials: [
+          { name: "Tier-1 monokristal panel seti (8 kWp)", price: "40.000 TL" },
+          { name: "Akıllı inverter + izleme", price: "16.000 TL" },
+          { name: "Paslanmaz montaj ekipmanı", price: "10.000 TL" },
+          { name: "Kablo, sigorta, AC/DC pano", price: "5.000 TL" },
+          { name: "Kurulum, test, devreye alma", price: "3.000 TL" }
+        ]
+      }
+    };
+
+    function renderMaterials(pkg) {
+      const wrap = document.getElementById('material-list');
+      wrap.innerHTML = '';
+      packages[pkg].materials.forEach(item => {
+        const li = document.createElement('li');
+        const name = document.createElement('span');
+        name.textContent = item.name;
+        const price = document.createElement('span');
+        price.textContent = item.price;
+        li.appendChild(name);
+        li.appendChild(price);
+        wrap.appendChild(li);
+      });
+      document.getElementById('active-package').textContent = pkg;
+      document.getElementById('est-power').textContent = packages[pkg].power;
+    }
+
+    function selectPackage(pkg) {
+      renderMaterials(pkg);
+      document.querySelectorAll('[data-package]').forEach(card => {
+        card.style.outline = card.dataset.package === pkg ? '2px solid var(--sun)' : 'none';
+      });
+    }
+
+    // initialize default package
+    renderMaterials('Performans');
+    selectPackage('Performans');
+  </script>
+</body>
+</html>
