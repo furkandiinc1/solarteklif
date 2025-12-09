@@ -3,7 +3,7 @@ const packages = {
   Ekonomi: {
     displayName: "Ekonomik & yeterli",
     power: "11 kWp",
-    price: 45000,
+    price: 243354,
     materials: [
       { name: "Kalyon Pv 550W M10 144 HC Bifacial G2G panel", qty: 18, unit: "adet", price: 24000 },
       { name: "APX11 PRO Akıllı İnverter MPPT", qty: 1, unit: "adet", price: 10000 },
@@ -15,7 +15,7 @@ const packages = {
   Performans: {
     displayName: "Gece rahat kullanım",
     power: "11 kWp",
-    price: 58000,
+    price: 291794,
     materials: [
       { name: "Kalyon Pv 550W M10 144 HC Bifacial G2G panel", qty: 18, unit: "adet", price: 30000 },
       { name: "APX11 PRO Akıllı İnverter MPPT", qty: 1, unit: "adet", price: 14000 },
@@ -27,7 +27,7 @@ const packages = {
   Premium: {
     displayName: "Yoğun/uzun kullanım",
     power: "11 kWp",
-    price: 74000,
+    price: 340129,
     materials: [
       { name: "Kalyon Pv 550W M10 144 HC Bifacial G2G panel", qty: 18, unit: "adet", price: 40000 },
       { name: "APX11 PRO Akıllı İnverter MPPT", qty: 1, unit: "adet", price: 16000 },
