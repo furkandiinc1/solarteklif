@@ -97,8 +97,8 @@ section { margin-top: 44px; }
 .material-table th, .material-table td { padding: 10px 8px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--text); text-align: left; }
 .material-table th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .material-table td.num { text-align: center; width: 40px; color: var(--muted); }
-.material-table td.qty { text-align: center; width: 70px; }
-.material-table td.unit, .material-table td.price, .material-table td.total { text-align: right; white-space: nowrap; }
+.material-table td.qty { text-align: center; width: 80px; }
+.material-table td.total { text-align: right; white-space: nowrap; }
 .material-table tbody tr:hover { background: #f7f8fc; }
 .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-top: 12px; }
 .total-card { background: #f9fafc; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
