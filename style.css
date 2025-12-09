@@ -93,11 +93,13 @@ section { margin-top: 44px; }
 
 .material-panel { margin-top: 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: 0 10px 26px rgba(0,0,0,0.08); color: var(--ink); }
 .material-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.material-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.material-list li { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; color: var(--muted); align-items: baseline; }
-.material-cost { text-align: right; }
-.material-cost div { font-size: 12px; color: #475366; }
-.material-list li:last-child { border-bottom: none; }
+.material-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.material-table th, .material-table td { padding: 10px 8px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--text); text-align: left; }
+.material-table th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.material-table td.num { text-align: center; width: 40px; color: var(--muted); }
+.material-table td.qty { text-align: center; width: 70px; }
+.material-table td.unit, .material-table td.price, .material-table td.total { text-align: right; white-space: nowrap; }
+.material-table tbody tr:hover { background: #f7f8fc; }
 .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-top: 12px; }
 .total-card { background: #f9fafc; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
 .total-card.highlight { border-color: rgba(245,180,0,0.5); background: #fff7e6; }

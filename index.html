@@ -100,7 +100,20 @@
           </div>
           <div class="pill" id="est-power">6 kWp</div>
         </div>
-        <ul class="material-list" id="material-list"></ul>
+        <table class="material-table" id="material-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Ürün Açıklaması</th>
+              <th>Miktar</th>
+              <th>Birim</th>
+              <th>Birim Fiyat</th>
+              <th>Toplam</th>
+              <th>6 Villa Toplam</th>
+            </tr>
+          </thead>
+          <tbody id="material-list"></tbody>
+        </table>
         <div class="totals">
           <div class="total-card">
             <div class="total-label">Villa başına</div>
@@ -131,21 +144,22 @@
     function renderMaterials(pkg) {
       const wrap = document.getElementById('material-list');
       wrap.innerHTML = '';
-      packages[pkg].materials.forEach(item => {
-        const li = document.createElement('li');
-        const name = document.createElement('span');
-        name.textContent = item.name;
-        const cost = document.createElement('div');
-        cost.className = 'material-cost';
-        const perVilla = document.createElement('div');
-        perVilla.textContent = "Villa: " + formatPrice(item.price);
-        const totalProj = document.createElement('div');
-        totalProj.textContent = VILLA_COUNT + " villa: " + formatPrice(item.price * VILLA_COUNT);
-        cost.appendChild(perVilla);
-        cost.appendChild(totalProj);
-        li.appendChild(name);
-        li.appendChild(cost);
-        wrap.appendChild(li);
+      packages[pkg].materials.forEach((item, idx) => {
+        const tr = document.createElement('tr');
+        const qty = item.qty || 1;
+        const unitPrice = item.price / qty;
+        const totalVilla = item.price;
+        const totalProj = item.price * VILLA_COUNT;
+        tr.innerHTML = `
+          <td class="num">${idx + 1}</td>
+          <td>${item.name}</td>
+          <td class="qty">${qty}</td>
+          <td class="unit">${item.unit || ''}</td>
+          <td class="price">${formatPrice(unitPrice)}</td>
+          <td class="total">${formatPrice(totalVilla)}</td>
+          <td class="total">${formatPrice(totalProj)}</td>
+        `;
+        wrap.appendChild(tr);
       });
       document.getElementById('active-package').textContent = pkg;
       document.getElementById('est-power').textContent = packages[pkg].power;
