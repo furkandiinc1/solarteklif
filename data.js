@@ -1,7 +1,7 @@
 ﻿const VILLA_COUNT = 6;
 const packages = {
   Ekonomi: {
-    power: "5 kWp",
+    power: "11 kWp",
     price: 45000,
     materials: [
       { name: "Kalyon Pv 550W M10 144 HC Bifacial G2G panel", qty: 18, unit: "adet", price: 24000 },
@@ -12,7 +12,7 @@ const packages = {
     ]
   },
   Performans: {
-    power: "6 kWp",
+    power: "11 kWp",
     price: 58000,
     materials: [
       { name: "Kalyon Pv 550W M10 144 HC Bifacial G2G panel", qty: 18, unit: "adet", price: 30000 },
@@ -23,7 +23,7 @@ const packages = {
     ]
   },
   Premium: {
-    power: "8 kWp",
+    power: "11 kWp",
     price: 74000,
     materials: [
       { name: "Kalyon Pv 550W M10 144 HC Bifacial G2G panel", qty: 18, unit: "adet", price: 40000 },
