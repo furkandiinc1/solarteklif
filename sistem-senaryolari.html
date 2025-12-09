@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suntep Solar | Sistem Senaryoları</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="suntepsolarlogo.png" alt="Suntep Solar" class="logo">
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="urunler.html">Donanımlar</a>
+        <a href="yerlesim.html">Yerleşim Planı</a>
+        <a href="sistem-senaryolari.html" class="active">Sistem Senaryoları</a>
+      </div>
+    </nav>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="section-title">Sistem Senaryoları</div>
+          <div class="muted">Paketlerin pratikte neyi ne kadar beslediğini ve enerji kapsamını özetler.</div>
+        </div>
+      </div>
+      <div class="scenario-grid" id="scenario-grid"></div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const scenarios = [
+      {
+        key: 'Ekonomi',
+        title: packages.Ekonomi.displayName,
+        energy: '10 kW LiFePO4 + 11 kW inverter',
+        runtime: 'Temel yüklerde 6-8 saat',
+        items: [
+          'Aydınlatma, TV, modem, bilgisayar',
+          'Buzdolabı + küçük ev aletleri',
+          'Hidrofor/pompa düşük süreli kullanım'
+        ]
+      },
+      {
+        key: 'Performans',
+        title: packages.Performans.displayName,
+        energy: '15 kW LiFePO4 + 11 kW inverter',
+        runtime: 'Orta yüklerde 8-10 saat',
+        items: [
+          'Aydınlatma, TV, modem, bilgisayar',
+          'Buzdolabı + çamaşır/bulaşık makinesi (döngü sınırlı)',
+          '1 adet klima (kısa süreli) + pompa/hidrofor'
+        ]
+      },
+      {
+        key: 'Premium',
+        title: packages.Premium.displayName,
+        energy: '20 kW LiFePO4 + 11 kW inverter',
+        runtime: 'Yüksek yüklerde 10-12 saat',
+        items: [
+          'Aydınlatma, TV, modem, bilgisayar',
+          'Buzdolabı + çamaşır/bulaşık makinesi',
+          '2 adet klima (daha uzun süre) + pompa/hidrofor'
+        ]
+      }
+    ];
+
+    function renderScenarios() {
+      const grid = document.getElementById('scenario-grid');
+      scenarios.forEach((sc, idx) => {
+        const card = document.createElement('div');
+        card.className = 'scenario-card';
+        card.innerHTML = `
+          <div class="scenario-head">
+            <div class="name">${sc.title}</div>
+            <div class="scenario-pill">${sc.energy}</div>
+          </div>
+          <div class="scenario-meta">
+            <div class="tag">Tahmini süre: ${sc.runtime}</div>
+            <div class="tag">Paket fiyatı: ${formatPrice(packages[sc.key].price)}</div>
+          </div>
+          <ul class="scenario-list">
+            ${sc.items.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    renderScenarios();
+  </script>
+</body>
+</html>
