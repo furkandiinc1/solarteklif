@@ -158,9 +158,6 @@
       document.getElementById('price-per-villa').textContent = formatPrice(packages[pkg].price);
       document.getElementById('price-total').textContent = formatPrice(packages[pkg].price * VILLA_COUNT);
       document.getElementById('price-' + pkg.toLowerCase()).textContent = formatPrice(packages[pkg].price);
-      document.querySelectorAll('[data-package]').forEach(card => {
-        card.style.outline = card.dataset.package === pkg ? '2px solid var(--accent)' : 'none';
-      });
     }
 
     function initPrices() {
@@ -170,8 +167,15 @@
       });
     }
 
+    function selectPackage(pkg) {
+      renderMaterials(pkg);
+      document.querySelectorAll('[data-package]').forEach(card => {
+        card.style.outline = card.dataset.package === pkg ? '2px solid var(--accent)' : 'none';
+      });
+    }
+
     initPrices();
-    renderMaterials('Performans');
+    selectPackage('Performans');
   </script>
 </body>
 </html>
