@@ -132,6 +132,7 @@ section { margin-top: 44px; }
 .gear-title { background: #0f2334; color: #fff; padding: 10px 12px; border-radius: 10px 10px 0 0; font-weight: 700; letter-spacing: 0.02em; }
 .gear-card { background: #fff; border: 1px solid #dbe2ec; border-radius: 0 0 12px 12px; padding: 16px; box-shadow: 0 10px 24px rgba(0,0,0,0.08); margin-bottom: 18px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: center; }
 .gear-visual { width: 100%; min-height: 200px; display: grid; place-items: center; border: 1px dashed #c9d2de; border-radius: 12px; background: linear-gradient(135deg, #f7f9fb, #eef3f8); color: #7a8494; font-weight: 700; }
+.gear-visual img { max-width: 100%; height: auto; border-radius: 8px; }
 .gear-text h3 { margin: 0 0 6px; font-size: 18px; color: var(--ink); }
 .gear-text .muted { margin: 0 0 6px; }
 .gear-text .spec { display: inline-block; padding: 4px 8px; border-radius: 8px; background: #f2f6fb; border: 1px solid #dbe2ec; color: var(--muted); font-size: 12px; }
