@@ -101,8 +101,15 @@
     .material-panel { margin-top: 16px; background: var(--card); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; box-shadow: 0 10px 26px rgba(0,0,0,0.08); }
     .material-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
     .material-list { list-style: none; padding: 0; margin: 12px 0 0; }
-    .material-list li { padding: 10px 0; border-bottom: 1px solid #edf0f4; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); }
+    .material-list li { padding: 10px 0; border-bottom: 1px solid #edf0f4; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); align-items: baseline; }
+    .material-cost { text-align: right; }
+    .material-cost div { font-size: 12px; }
     .material-list li:last-child { border-bottom: none; }
+    .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; margin-top: 12px; }
+    .total-card { background: #f9fafc; border: 1px solid #e6e8ee; border-radius: 12px; padding: 10px 12px; }
+    .total-card.highlight { border-color: rgba(245,183,0,0.5); background: #fffaf0; }
+    .total-label { color: var(--muted); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .total-value { font-size: 18px; font-weight: 800; color: var(--ink); }
 
     .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
     .product { background: linear-gradient(135deg, rgba(18,38,58,0.06), rgba(47,123,94,0.08)); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; }
@@ -144,8 +151,11 @@
           </div>
         </div>
         <div style="text-align:right; align-self:center; color:rgba(255,255,255,0.85);">
-          <div style="font-size:14px; text-transform:uppercase; letter-spacing:0.14em;">Saha verisi</div>
-          <div style="font-size:34px; font-weight:800;">98.7% uptime</div>
+          <div style="font-size:14px; text-transform:uppercase; letter-spacing:0.14em;">Proje</div>
+          <div style="font-size:20px; font-weight:700;">Zeynel Oktay Villa Projesi</div>
+          <div style="font-size:13px; opacity:0.8;">Toplam 6 villa için çatı GES</div>
+          <div style="margin-top:10px; font-size:12px; text-transform:uppercase; letter-spacing:0.12em;">Saha verisi</div>
+          <div style="font-size:30px; font-weight:800;">98.7% uptime</div>
           <div style="font-size:13px; opacity:0.8;">Gerçek saha performansı</div>
         </div>
       </div>
@@ -198,11 +208,21 @@
         <div class="material-header">
           <div>
             <div class="section-title" style="margin:0;">Seçilen paket: <span id="active-package">Performans</span></div>
-            <div class="muted">Genel malzeme listesi ve tahmini fiyatlar. Gerçek değerler saha keşfine göre güncellenecek.</div>
+            <div class="muted">Bu liste tek villa içindir. Toplam 6 villa için tutarlar otomatik hesaplanır. Gerçek değerler saha keşfine göre güncellenecek.</div>
           </div>
           <div class="pill" id="est-power">6 kWp</div>
         </div>
         <ul class="material-list" id="material-list"></ul>
+        <div class="totals">
+          <div class="total-card">
+            <div class="total-label">Villa başına</div>
+            <div class="total-value" id="price-per-villa"></div>
+          </div>
+          <div class="total-card highlight">
+            <div class="total-label">6 villa toplam</div>
+            <div class="total-value" id="price-total"></div>
+          </div>
+        </div>
         <div class="muted" style="margin-top:8px;">Not: Fiyatlar KDV hariç/ilave olabilir, saha keşfine göre değişir.</div>
       </div>
     </section>
@@ -250,41 +270,44 @@
   </div>
 
   <script>
+    const VILLA_COUNT = 6;
     const packages = {
       Ekonomi: {
         power: "5 kWp",
-        price: "45.000 TL",
+        price: 45000,
         materials: [
-          { name: "Monokristal panel seti (5 kWp)", price: "24.000 TL" },
-          { name: "String inverter", price: "10.000 TL" },
-          { name: "Galvaniz montaj ekipmanı", price: "6.000 TL" },
-          { name: "Kablo, sigorta, AC/DC pano", price: "3.000 TL" },
-          { name: "Kurulum ve test", price: "2.000 TL" }
+          { name: "Monokristal panel seti (5 kWp)", price: 24000 },
+          { name: "String inverter", price: 10000 },
+          { name: "Galvaniz montaj ekipmanı", price: 6000 },
+          { name: "Kablo, sigorta, AC/DC pano", price: 3000 },
+          { name: "Kurulum ve test", price: 2000 }
         ]
       },
       Performans: {
         power: "6 kWp",
-        price: "58.000 TL",
+        price: 58000,
         materials: [
-          { name: "High-eff monokristal panel seti (6 kWp)", price: "30.000 TL" },
-          { name: "Hibrit hazır akıllı inverter", price: "14.000 TL" },
-          { name: "Alüminyum montaj ekipmanı", price: "8.000 TL" },
-          { name: "Kablo, sigorta, AC/DC pano", price: "4.000 TL" },
-          { name: "Kurulum, test, devreye alma", price: "2.000 TL" }
+          { name: "High-eff monokristal panel seti (6 kWp)", price: 30000 },
+          { name: "Hibrit hazır akıllı inverter", price: 14000 },
+          { name: "Alüminyum montaj ekipmanı", price: 8000 },
+          { name: "Kablo, sigorta, AC/DC pano", price: 4000 },
+          { name: "Kurulum, test, devreye alma", price: 2000 }
         ]
       },
       Premium: {
         power: "8 kWp",
-        price: "74.000 TL",
+        price: 74000,
         materials: [
-          { name: "Tier-1 monokristal panel seti (8 kWp)", price: "40.000 TL" },
-          { name: "Akıllı inverter + izleme", price: "16.000 TL" },
-          { name: "Paslanmaz montaj ekipmanı", price: "10.000 TL" },
-          { name: "Kablo, sigorta, AC/DC pano", price: "5.000 TL" },
-          { name: "Kurulum, test, devreye alma", price: "3.000 TL" }
+          { name: "Tier-1 monokristal panel seti (8 kWp)", price: 40000 },
+          { name: "Akıllı inverter + izleme", price: 16000 },
+          { name: "Paslanmaz montaj ekipmanı", price: 10000 },
+          { name: "Kablo, sigorta, AC/DC pano", price: 5000 },
+          { name: "Kurulum, test, devreye alma", price: 3000 }
         ]
       }
     };
+
+    const formatPrice = (value) => value.toLocaleString('tr-TR') + " TL";
 
     function renderMaterials(pkg) {
       const wrap = document.getElementById('material-list');
@@ -293,14 +316,23 @@
         const li = document.createElement('li');
         const name = document.createElement('span');
         name.textContent = item.name;
-        const price = document.createElement('span');
-        price.textContent = item.price;
+        const cost = document.createElement('div');
+        cost.className = 'material-cost';
+        const perVilla = document.createElement('div');
+        perVilla.textContent = "Villa: " + formatPrice(item.price);
+        const totalProj = document.createElement('div');
+        totalProj.textContent = "6 villa: " + formatPrice(item.price * VILLA_COUNT);
+        cost.appendChild(perVilla);
+        cost.appendChild(totalProj);
         li.appendChild(name);
-        li.appendChild(price);
+        li.appendChild(cost);
         wrap.appendChild(li);
       });
       document.getElementById('active-package').textContent = pkg;
       document.getElementById('est-power').textContent = packages[pkg].power;
+      document.getElementById('price-per-villa').textContent = formatPrice(packages[pkg].price);
+      document.getElementById('price-total').textContent = formatPrice(packages[pkg].price * VILLA_COUNT);
+      document.getElementById('price-' + pkg.toLowerCase()).textContent = formatPrice(packages[pkg].price);
     }
 
     function selectPackage(pkg) {
@@ -310,7 +342,15 @@
       });
     }
 
+    function initPrices() {
+      ['Ekonomi','Performans','Premium'].forEach(key => {
+        const el = document.getElementById('price-' + key.toLowerCase());
+        if (el) el.textContent = formatPrice(packages[key].price);
+      });
+    }
+
     // initialize default package
+    initPrices();
     renderMaterials('Performans');
     selectPackage('Performans');
   </script>
