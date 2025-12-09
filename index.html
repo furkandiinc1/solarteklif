@@ -110,6 +110,9 @@
     .total-card.highlight { border-color: rgba(245,183,0,0.5); background: #fffaf0; }
     .total-label { color: var(--muted); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
     .total-value { font-size: 18px; font-weight: 800; color: var(--ink); }
+    .download-card { margin-top: 12px; padding: 14px; border-radius: 12px; background: #f3f6fb; border: 1px solid #e6e8ee; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .download-card .pill { background: rgba(47,123,94,0.12); color: var(--accent); border: 1px solid rgba(47,123,94,0.2); }
+    .download-card a { text-decoration: none; font-weight: 700; color: var(--ink); padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid #d9dee7; box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
 
     .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
     .product { background: linear-gradient(135deg, rgba(18,38,58,0.06), rgba(47,123,94,0.08)); border: 1px solid #e6e8ee; border-radius: var(--radius); padding: 16px; }
@@ -221,6 +224,13 @@
           <div class="total-card highlight">
             <div class="total-label">6 villa toplam</div>
             <div class="total-value" id="price-total"></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <span class="pill">Projeye özel</span>
+          <div>
+            Zeynel Oktay GES Çizimi (DWG) – yerleşim planı<br>
+            <a href="Zeynel%20Oktay%20GES%20%C3%87izimi.dwg" download>DWG dosyasını indir</a>
           </div>
         </div>
         <div class="muted" style="margin-top:8px;">Not: Fiyatlar KDV hariç/ilave olabilir, saha keşfine göre değişir.</div>
