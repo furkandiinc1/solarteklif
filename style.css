@@ -55,7 +55,7 @@ body {
   background: radial-gradient(circle at 20% 20%, rgba(245,180,0,0.16), transparent 40%);
   pointer-events: none;
 }
-.hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; position: relative; z-index: 1; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 16px; position: relative; z-index: 1; }
 .hero h1 { margin: 0 0 12px; font-size: clamp(30px, 4.6vw, 46px); letter-spacing: -0.01em; }
 .hero p { margin: 0; color: rgba(255,255,255,0.82); max-width: 720px; }
 .cta-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
@@ -63,13 +63,10 @@ body {
 .btn.primary { background: linear-gradient(135deg, var(--accent), #ffd96b); color: #0b1622; border: none; box-shadow: 0 12px 30px rgba(245,180,0,0.35); }
 .btn.light { background: #fff; color: var(--ink); border-color: #e6e9f0; }
 .btn:hover { transform: translateY(-2px); }
-.hero-side { text-align:right; align-self:center; color:rgba(255,255,255,0.88); display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
-.hero-side .top { font-size:13px; text-transform:uppercase; letter-spacing:0.12em; }
-.hero-side .title { font-size:20px; font-weight:700; }
-.hero-side .subtitle { font-size:13px; opacity:0.8; }
-.hero-side .uptime { margin-top:10px; font-size:12px; text-transform:uppercase; letter-spacing:0.12em; }
-.hero-side .value { font-size:30px; font-weight:800; display:flex; align-items:flex-end; gap:6px; }
-.hero-side .value .unit { font-size:14px; font-weight:700; opacity:0.82; line-height:1; }
+.hero-side { display:none; }
+.power-row { display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap; margin: 4px 0 8px; }
+.power-row .value { font-size:30px; font-weight:800; display:flex; align-items:flex-end; gap:6px; color:#fefefe; }
+.power-row .value .unit { font-size:14px; font-weight:700; opacity:0.82; line-height:1; }
 .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 10px; margin-top: 16px; }
 .metric { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 14px; color: #f7f9ff; }
 .metric strong { display: block; font-size: 18px; }
@@ -153,6 +150,9 @@ section { margin-top: 44px; }
   .metrics { grid-template-columns: 1fr; gap: 8px; }
   .metric { padding: 9px 10px; font-size: 14px; }
   .metric strong { font-size: 16px; }
+  .power-row { gap: 10px; }
+  .power-row .value { font-size: 26px; }
+  .power-row .value .unit { font-size: 13px; }
   .material-panel { padding: 12px; }
   .material-table { min-width: 480px; }
   .cards { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; overflow-x: auto; padding-bottom: 6px; }
