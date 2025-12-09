@@ -4,9 +4,9 @@ const packages = {
     power: "5 kWp",
     price: 45000,
     materials: [
-      { name: "Monokristal panel seti (5 kWp)", price: 24000 },
-      { name: "String inverter", price: 10000 },
-      { name: "Galvaniz montaj ekipmanı", price: 6000 },
+      { name: "18x Kalyon Pv 550W M10 144 HC Bifacial G2G panel", price: 24000 },
+      { name: "APX11 PRO Akıllı İnverter MPPT", price: 10000 },
+      { name: "2x 51,2V 100Ah LiFePO4 lityum akü", price: 8000 },
       { name: "Kablo, sigorta, AC/DC pano", price: 3000 },
       { name: "Kurulum ve test", price: 2000 }
     ]
@@ -15,9 +15,9 @@ const packages = {
     power: "6 kWp",
     price: 58000,
     materials: [
-      { name: "High-eff monokristal panel seti (6 kWp)", price: 30000 },
-      { name: "Hibrit hazır akıllı inverter", price: 14000 },
-      { name: "Alüminyum montaj ekipmanı", price: 8000 },
+      { name: "18x Kalyon Pv 550W M10 144 HC Bifacial G2G panel", price: 30000 },
+      { name: "APX11 PRO Akıllı İnverter MPPT", price: 14000 },
+      { name: "3x 51,2V 100Ah LiFePO4 lityum akü", price: 9000 },
       { name: "Kablo, sigorta, AC/DC pano", price: 4000 },
       { name: "Kurulum, test, devreye alma", price: 2000 }
     ]
@@ -26,9 +26,9 @@ const packages = {
     power: "8 kWp",
     price: 74000,
     materials: [
-      { name: "Tier-1 monokristal panel seti (8 kWp)", price: 40000 },
-      { name: "Akıllı inverter + izleme", price: 16000 },
-      { name: "Paslanmaz montaj ekipmanı", price: 10000 },
+      { name: "18x Kalyon Pv 550W M10 144 HC Bifacial G2G panel", price: 40000 },
+      { name: "APX11 PRO Akıllı İnverter MPPT", price: 16000 },
+      { name: "4x 51,2V 100Ah LiFePO4 lityum akü", price: 12000 },
       { name: "Kablo, sigorta, AC/DC pano", price: 5000 },
       { name: "Kurulum, test, devreye alma", price: 3000 }
     ]
