@@ -9,6 +9,11 @@ const packages = {
       { name: "APX11 PRO Akıllı İnverter MPPT", qty: 1, unit: "adet", price: 10000 },
       { name: "LiFePO4 lityum akü (10 kW, 51,2V sistem)", qty: 1, unit: "adet", price: 8000 },
       { name: "Kablo, sigorta, AC/DC pano", qty: 1, unit: "takım", price: 3000 },
+      { name: "Konstrüksiyon (montaj profilleri ve bağlantı seti)", qty: 1, unit: "takım", price: 0 },
+      { name: "Solar kablolama seti (DC/AC)", qty: 1, unit: "set", price: 0 },
+      { name: "GES tavası", qty: 1, unit: "adet", price: 0 },
+      { name: "GES panosu", qty: 1, unit: "adet", price: 0 },
+      { name: "Topraklama şeridi", qty: 1, unit: "adet", price: 0 },
       { name: "Kurulum ve test", qty: 1, unit: "hizmet", price: 2000 }
     ]
   },
@@ -21,6 +26,11 @@ const packages = {
       { name: "APX11 PRO Akıllı İnverter MPPT", qty: 1, unit: "adet", price: 14000 },
       { name: "LiFePO4 lityum akü (15 kW, 51,2V sistem)", qty: 1, unit: "adet", price: 9000 },
       { name: "Kablo, sigorta, AC/DC pano", qty: 1, unit: "takım", price: 4000 },
+      { name: "Konstrüksiyon (montaj profilleri ve bağlantı seti)", qty: 1, unit: "takım", price: 0 },
+      { name: "Solar kablolama seti (DC/AC)", qty: 1, unit: "set", price: 0 },
+      { name: "GES tavası", qty: 1, unit: "adet", price: 0 },
+      { name: "GES panosu", qty: 1, unit: "adet", price: 0 },
+      { name: "Topraklama şeridi", qty: 1, unit: "adet", price: 0 },
       { name: "Kurulum, test, devreye alma", qty: 1, unit: "hizmet", price: 2000 }
     ]
   },
@@ -33,6 +43,11 @@ const packages = {
       { name: "APX11 PRO Akıllı İnverter MPPT", qty: 1, unit: "adet", price: 16000 },
       { name: "LiFePO4 lityum akü (20 kW, 51,2V sistem)", qty: 1, unit: "adet", price: 12000 },
       { name: "Kablo, sigorta, AC/DC pano", qty: 1, unit: "takım", price: 5000 },
+      { name: "Konstrüksiyon (montaj profilleri ve bağlantı seti)", qty: 1, unit: "takım", price: 0 },
+      { name: "Solar kablolama seti (DC/AC)", qty: 1, unit: "set", price: 0 },
+      { name: "GES tavası", qty: 1, unit: "adet", price: 0 },
+      { name: "GES panosu", qty: 1, unit: "adet", price: 0 },
+      { name: "Topraklama şeridi", qty: 1, unit: "adet", price: 0 },
       { name: "Kurulum, test, devreye alma", qty: 1, unit: "hizmet", price: 3000 }
     ]
   }
