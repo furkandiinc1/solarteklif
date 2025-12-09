@@ -129,7 +129,7 @@ section { margin-top: 44px; }
 
 /* Products page cards */
 .gear-section { margin-top: 12px; }
-.gear-title { background: #0f2334; color: #fff; padding: 10px 12px; border-radius: 10px 10px 0 0; font-weight: 700; letter-spacing: 0.02em; }
+.gear-title { background: linear-gradient(135deg, #0f2334, #153654); color: #fff; padding: 10px 12px; border-radius: 10px 10px 0 0; font-weight: 700; letter-spacing: 0.02em; }
 .gear-card { background: #fff; border: 1px solid #dbe2ec; border-radius: 0 0 12px 12px; padding: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center; }
 .gear-visual { width: 100%; min-height: 160px; display: grid; place-items: center; border: 1px dashed #c9d2de; border-radius: 12px; background: linear-gradient(135deg, #f7f9fb, #eef3f8); color: #7a8494; font-weight: 700; }
 .gear-visual img { max-width: 100%; height: auto; border-radius: 8px; }
