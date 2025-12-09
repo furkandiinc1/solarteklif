@@ -132,7 +132,7 @@ section { margin-top: 44px; }
 .gear-title { background: linear-gradient(135deg, #0f2334, #153654); color: #fff; padding: 10px 12px; border-radius: 10px 10px 0 0; font-weight: 700; letter-spacing: 0.02em; }
 .gear-card { background: #fff; border: 1px solid #dbe2ec; border-radius: 0 0 12px 12px; padding: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center; }
 .gear-visual { width: 100%; min-height: 160px; display: grid; place-items: center; border: 1px dashed #c9d2de; border-radius: 12px; background: linear-gradient(135deg, #f7f9fb, #eef3f8); color: #7a8494; font-weight: 700; }
-.gear-visual img { max-width: 100%; height: auto; border-radius: 8px; }
+.gear-visual img { max-width: 100%; max-height: 160px; height: auto; border-radius: 8px; object-fit: contain; }
 .gear-text h3 { margin: 0 0 6px; font-size: 18px; color: var(--ink); }
 .gear-text .muted { margin: 0 0 6px; }
 .gear-text .spec { display: inline-block; padding: 4px 8px; border-radius: 8px; background: #f2f6fb; border: 1px solid #dbe2ec; color: var(--muted); font-size: 12px; }
@@ -147,14 +147,20 @@ section { margin-top: 44px; }
   .page { padding: 0 8px 48px; }
   .navbar { gap: 8px; }
   .nav-links { gap: 8px; }
-  .nav-links a { padding: 8px 10px; font-size: 14px; }
-  .hero { padding: 18px; }
-  .hero h1 { font-size: clamp(24px, 6.5vw, 32px); }
+  .nav-links a { padding: 7px 10px; font-size: 14px; }
+  .hero { padding: 16px; border-radius: 16px; }
+  .hero h1 { font-size: clamp(22px, 6vw, 30px); }
   .metrics { grid-template-columns: 1fr; gap: 8px; }
-  .metric { padding: 10px 12px; }
+  .metric { padding: 9px 10px; font-size: 14px; }
+  .metric strong { font-size: 16px; }
   .material-panel { padding: 12px; }
-  .material-table { min-width: 520px; }
+  .material-table { min-width: 480px; }
   .cards { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; overflow-x: auto; padding-bottom: 6px; }
   .cards::-webkit-scrollbar { height: 6px; }
   .cards::-webkit-scrollbar-thumb { background: #cfd5de; border-radius: 4px; }
+  .card { padding: 14px; min-width: 230px; }
+  .card h3 { font-size: 18px; }
+  .price { font-size: 24px; }
+  .features li { font-size: 14px; line-height: 1.4; }
+  section { margin-top: 28px; }
 }
