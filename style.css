@@ -127,9 +127,9 @@ section { margin-top: 44px; }
 /* Products page cards */
 .gear-section { margin-top: 12px; }
 .gear-title { background: linear-gradient(135deg, #0f2334, #153654); color: #fff; padding: 10px 12px; border-radius: 10px 10px 0 0; font-weight: 700; letter-spacing: 0.02em; }
-.gear-card { background: #fff; border: 1px solid #dbe2ec; border-radius: 0 0 12px 12px; padding: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center; }
-.gear-visual { width: 100%; min-height: 160px; display: grid; place-items: center; border: 1px dashed #c9d2de; border-radius: 12px; background: linear-gradient(135deg, #f7f9fb, #eef3f8); color: #7a8494; font-weight: 700; }
-.gear-visual img { max-width: 100%; max-height: 160px; height: auto; border-radius: 8px; object-fit: contain; }
+.gear-card { background: #fff; border: 1px solid #dbe2ec; border-radius: 0 0 12px 12px; padding: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 14px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: center; }
+.gear-visual { width: 100%; min-height: 220px; display: grid; place-items: center; border: 1px dashed #c9d2de; border-radius: 12px; background: linear-gradient(135deg, #f7f9fb, #eef3f8); color: #7a8494; font-weight: 700; }
+.gear-visual img { max-width: 100%; max-height: 320px; height: auto; border-radius: 8px; object-fit: contain; }
 .gear-text h3 { margin: 0 0 6px; font-size: 18px; color: var(--ink); }
 .gear-text .muted { margin: 0 0 6px; }
 .gear-text .spec { display: inline-block; padding: 4px 8px; border-radius: 8px; background: #f2f6fb; border: 1px solid #dbe2ec; color: var(--muted); font-size: 12px; }
@@ -153,6 +153,8 @@ section { margin-top: 44px; }
   .power-row { gap: 10px; }
   .power-row .value { font-size: 26px; }
   .power-row .value .unit { font-size: 13px; }
+  .gear-visual { min-height: 160px; }
+  .gear-visual img { max-height: 160px; }
   .material-panel { padding: 12px; }
   .material-table { min-width: 480px; }
   .cards { display: grid; grid-auto-flow: column; grid-auto-columns: 260px; overflow-x: auto; padding-bottom: 6px; }
