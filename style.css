@@ -68,7 +68,8 @@ body {
 .hero-side .title { font-size:20px; font-weight:700; }
 .hero-side .subtitle { font-size:13px; opacity:0.8; }
 .hero-side .uptime { margin-top:10px; font-size:12px; text-transform:uppercase; letter-spacing:0.12em; }
-.hero-side .value { font-size:30px; font-weight:800; }
+.hero-side .value { font-size:30px; font-weight:800; display:flex; align-items:flex-end; gap:6px; }
+.hero-side .value .unit { font-size:14px; font-weight:700; opacity:0.82; line-height:1; }
 .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 10px; margin-top: 16px; }
 .metric { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 14px; color: #f7f9ff; }
 .metric strong { display: block; font-size: 18px; }
