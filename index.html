@@ -107,8 +107,6 @@
               <th>Ürün Açıklaması</th>
               <th>Adet (villa)</th>
               <th>Adet (6 villa)</th>
-              <th>Toplam (villa)</th>
-              <th>Toplam (6 villa)</th>
             </tr>
           </thead>
           <tbody id="material-list"></tbody>
@@ -147,15 +145,11 @@
         const tr = document.createElement('tr');
         const qty = item.qty || 1;
         const qty6 = qty * VILLA_COUNT;
-        const totalVilla = item.price;
-        const totalProj = item.price * VILLA_COUNT;
         tr.innerHTML = `
           <td class="num">${idx + 1}</td>
           <td>${item.name}</td>
           <td class="qty">${qty}</td>
           <td class="qty">${qty6}</td>
-          <td class="total">${formatPrice(totalVilla)}</td>
-          <td class="total">${formatPrice(totalProj)}</td>
         `;
         wrap.appendChild(tr);
       });
